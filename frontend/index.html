@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Control Smart Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 Voice Control Smart Home</h1>
+            <p>Control your home appliances with voice commands</p>
+        </header>
+
+        <div class="status-bar">
+            <div class="connection-status" id="connectionStatus">
+                <span class="status-indicator"></span>
+                <span>Connecting to Arduino...</span>
+            </div>
+            <div class="voice-status" id="voiceStatus">
+                <span class="mic-icon">🎤</span>
+                <span>Voice training required</span>
+            </div>
+        </div>
+
+        <div class="voice-training" id="voiceTraining">
+            <h3>🔐 Voice Authentication Setup</h3>
+            <p>For security, only trained voices can control your smart home.</p>
+            <button id="trainVoiceBtn" class="train-voice-button">
+                <span class="mic-icon">🎤</span>
+                <span>Train Your Voice</span>
+            </button>
+            <div class="training-instructions">
+                <p>Click the button above and speak these phrases clearly:</p>
+                <ul>
+                    <li>"turn on light"</li>
+                    <li>"turn off fan"</li>
+                    <li>"turn on tv"</li>
+                    <li>"turn off everything"</li>
+                    <li>"hello smart home"</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="devices-grid" id="devicesGrid">
+            <!-- Devices will be populated by JavaScript -->
+        </div>
+
+        <div class="voice-control">
+            <button id="voiceBtn" class="voice-button">
+                <span class="mic-icon">🎤</span>
+                <span>Tap to Speak</span>
+            </button>
+            <div class="voice-feedback" id="voiceFeedback"></div>
+        </div>
+
+        <div class="quick-commands">
+            <h3>Quick Commands:</h3>
+            <div class="command-examples">
+                <button class="command-btn" onclick="sendVoiceCommand('turn on light')">Turn On Light</button>
+                <button class="command-btn" onclick="sendVoiceCommand('turn off light')">Turn Off Light</button>
+                <button class="command-btn" onclick="sendVoiceCommand('turn on fan')">Turn On Fan</button>
+                <button class="command-btn" onclick="sendVoiceCommand('turn off fan')">Turn Off Fan</button>
+                <button class="command-btn" onclick="sendVoiceCommand('turn on everything')">All On</button>
+                <button class="command-btn" onclick="sendVoiceCommand('turn off everything')">All Off</button>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to use:</h3>
+            <ol>
+                <li>Make sure your Arduino is connected and powered on</li>
+                <li>Click the microphone button and speak clearly</li>
+                <li>Use commands like: "turn on light", "turn off fan", etc.</li>
+                <li>Or use the quick command buttons above</li>
+            </ol>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
